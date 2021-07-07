@@ -28,9 +28,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     width: 100%;
-    max-width: 1870px;
+    max-width: 1920px;
 }
 ol, ul {
 	list-style: none;
@@ -152,10 +152,6 @@ header{
 }
 .allmenu{
     background-color: #51AA1B;
-    .toggle-menu{
-        background-color: #FFD200;
-        padding: 20px;    
-    }
     .list-menu{
         padding: 20px ;
         .items-menu{
@@ -172,39 +168,53 @@ header{
         }
     }
 }
+/*-------MAIN--------- */
 main{
-    .homeslide{
-        img{
-            height: fit-content;
+    .left-side{
+        margin-top: 30px;
+        .toggle-menu{
+            background-color: #51AA1B;
+            padding: 15px;    
+            color: #fff;
+    
         }
-        .nav{
-            // display: none;
-            max-width: 450px;
+        .list-categories{
+            a{
+                color: #222;
+                text-decoration: none;
+            }
+            border: 1px solid #e5e5e5;
+            padding-right: 20px;
+            padding-left: 20px;  
             ul{
-                width: 100%;
                 li{
-                    display: flex;
-                    border: 1px solid #eee;
-                    padding: 7px 15px;
-                    span{
-                        margin-top: 6px;
-                    }
-                   
-                        img{
-                            width: 30px;
-                            height: 25px;
-                            margin-right: 5px;
-                        }
-                        i{
-                            padding: 5px;
-                        }
-                       
-                    
-                    
-                    
-                    
+                    border-bottom: 1px solid #e5e5e5;
+                    border-collapse: collapse;
+                    padding: 10px;
+                    color: #222;
                 }
             }
         }
+        &__hotdeal{
+            margin-top: 50px;
+
+        }
     }
+    .right-side{
+        margin-top: 30px;
+        &__slideshow{
+            margin-bottom:50px;
+        }
+        .carousel-inner{
+            .carousel-item{
+                img{
+                    width: 100%;
+                    height: auto;
+                    max-height: 460px;
+                }
+            }
+        }
+        
+    }
+   
 }
