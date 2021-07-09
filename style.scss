@@ -1,10 +1,16 @@
-
+*{
+    a{
+        text-decoration: none;
+        color: #222;
+    }
+}
 body{
     font-family: 'Open Sans', sans-serif;;
     ul{
         list-style: none;
         margin: 0;
     }
+    
 }
 h2 {
     font-size: 20px;
@@ -14,7 +20,8 @@ h2 {
 }
 .pro-bg{
     background-color: #fff;
-     box-shadow: 3px 1px 10px 0px #ececec; 
+    box-shadow: -1px 0px 10px 0px #ececec;
+
     float: left;
     width: 100%;
     margin-bottom: 50px;
@@ -163,7 +170,6 @@ main{
             }
             border: 1px solid #e5e5e5;
             padding-right: 20px;
-            padding-left: 20px;  
             ul{
                 li{
                     border-bottom: 1px solid #e5e5e5;
@@ -187,8 +193,9 @@ main{
                     position: absolute;
                     right: 0;
                         .owl-prev , .owl-next{
-                            padding:5px 10px;
-                            background-color: #869791;                          
+                            margin: 5px;
+                            padding: 3px 10px;
+                            background-color: #869791;
                             opacity: 0.5;
                             a{
                                 color: #fff;
@@ -197,6 +204,7 @@ main{
                         :hover{
                             background-color: #51AA1B;
                             opacity: 1;
+                            transition: 0.5s;
                         }
                 }
                
@@ -219,9 +227,7 @@ main{
         margin-top: 30px;
         &__slideshow , &__banner{
             margin-bottom:50px;
-        }
-        
-        
+        }   
         .carousel-inner{
             .carousel-item{
                 img{
@@ -231,7 +237,149 @@ main{
                 }
             }
         }
-        
+        &__category-tab ,&__featured-tab,&__specials-tab,&__blog  {      
+            padding: 20px;   
+            .header{
+                padding-bottom: 20px;
+                border-bottom: 1px solid #e5e5e5;
+                margin-bottom: 20px;
+                h2{
+                    flex: 3;
+                }
+                nav{
+                    flex:7;
+                    .nav-cate{
+                        line-height: 42px;
+                        li{
+                            a{
+                                text-decoration: none;
+                                padding: 0 20px;
+                                
+                            }
+                        }
+                        :hover{
+                           color: #51aa1b;
+                           transition: 0.5s
+                        }
+                    }
+                }
+                .owl-button{
+                    flex: 0;
+                    .owl-prev , .owl-next{
+                        margin: 5px;
+                        padding: 3px 10px;
+                        background-color: #869791;
+                        opacity: 0.5;
+                        a{
+                            vertical-align: middle;
+                            color: #fff;
+                        }
+                    }
+                    :hover{
+                        background-color: #51AA1B;
+                        transition: 0.5s;
+                        opacity: 1;
+                    }
+                   
+                }
+            }
+           
+            .content{
+                .card{
+                    margin: 0 5px;
+                    .input-group{
+                        float: left;
+                        width: 100%;
+                        .lable-qty{
+                            margin: 5px 5px 0 0;
+                        }
+                        .input-qty{
+                            position: relative;
+                            width: 44px;
+                            min-width: 44px;
+                            display: inline-block;
+                            float: none;
+                            padding: 0 5px;
+                            border:1px solid #e5e5e5;  
+                        }
+                        .btn-addcart{
+                            border:1px solid #e5e5e5;
+                            background-color: #fff;          
+                                   
+                        }
+                        .btn-addcart:hover{
+                            background-color: #51AA1B;
+                            transition: all 0.8s;
+                        }
+                        
+                    }
+                }
+                .card:first-child {               
+                    margin-left: 15px;
+                }
+                .card:last-child {               
+                    margin-right: 15px;
+                }
+                img{
+                    border: 1px solid #e5e5e5;
+                }
+               
+            }
+
+        }   
+        &__specials-tab{
+            .content{
+                .product-layout{
+                   width: 100%;
+                   margin-bottom: 10px;
+                    .image{
+                        margin-right: 10px;
+                        img{
+                            width: 90px;
+                            height: 90px;
+                            object-fit: cover;
+                            border: 1px solid #e5e5e5;
+                            
+                        }
+                       
+                    }
+                    .caption{
+                        padding: 0 10px;
+                        .price{
+                            margin: 0;  
+                        }
+                    }
+                }
+            }
+        }
+        &__blog{
+            h4{              
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: #212121;
+            }
+            .card-body{
+                padding: 30px 0 0 0;
+                .blog-desc{
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+                .btn-readmore{
+                    background-color: #51AA1B;
+                    border-color: #51AA1B;
+                    color: #fff;
+                   
+                }
+                :hover{
+                    background-color: #212121;
+                    transition: 1s ease-out;
+                }
+            }
+        }
     }
    
 }
