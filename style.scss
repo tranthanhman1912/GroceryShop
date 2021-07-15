@@ -1,7 +1,7 @@
 *{
     a{
         text-decoration: none;
-        color: #222;
+        color: #666;
         transition: all 0.4s ease-in-out 0s;     
         
     }
@@ -72,15 +72,41 @@ nav{
     }
     .top-link{
         li{
+            cursor: pointer;
             display: inline-block;
             padding: 9px 10px;
-        
+            position: relative;
             text-align: center;
             border-right: 1px solid #e5e5e5;
-            height: 31px;
+            height: 30px;
             color: #666;
             i{
                 margin: 0 5px;
+            }
+            .dropdown-menu-account,.dropdown-menu-currency,.dropdown-menu-language{
+                display: inline-block;
+                min-width: 120px;
+                width: 120px;
+                position: absolute;
+                left: -10px;
+                z-index: 1000;
+                display: none;
+                padding: 5px 0;
+                margin: 2px 0 0;
+                font-size: 14px;
+                background-clip: padding-box;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                li{
+                    width: 100%;
+                    text-align: left;
+                    border: none;
+                        img{
+                            margin-right: 5px;
+                        }
+                  
+                }
+                
             }
         }
     }
@@ -186,37 +212,35 @@ header{
 /*-------MAIN--------- */
 main{
     .left-side{
+        margin-top: 30px;
         &__categories{
             float: left;
             width: 100%;
-        }
-        margin-top: 30px;
-        .toggle-menu{
-            background-color: #51AA1B;
-            padding: 15px;    
-            color: #fff;
-            cursor: pointer;
-    
-        }
-        .list-categories{
-            a{
-                color: #222;
-                text-decoration: none;
+            .toggle-menu{
+                background-color: #51AA1B;
+                padding: 15px;    
+                color: #fff;
+                cursor: pointer;
+        
             }
-            border: 1px solid #e5e5e5;
-            padding-right: 20px;
-            ul{
-                li{
-                    border-bottom: 1px solid #e5e5e5;
-                    border-collapse: collapse;
-                    padding: 10px;
+            .list-categories{
+                a{
                     color: #222;
+                    text-decoration: none;
+                }
+                border: 1px solid #e5e5e5;
+                padding-right: 20px;
+                ul{
+                    li{
+                        border-bottom: 1px solid #e5e5e5;
+                        border-collapse: collapse;
+                        padding: 10px;
+                        color: #222;
+                    }
                 }
             }
-        }
-        &__hotdeal,&__hotdeals,&__topdeal,&__newsletter{
-            float: left;
-            width: 100%;
+        } 
+        &__hotdeal,&__hotdeals,&__topdeal,&__newsletter{       
             .title{
                 position: relative;
                 //padding: 0 30px;
@@ -231,6 +255,7 @@ main{
                             margin: 5px;
                             // padding: 5px 10px;
                             background-color: #869791;
+                            border-radius: 5px;
                             opacity: 0.5;
                             a{
                                 color: #fff;
@@ -248,26 +273,24 @@ main{
                
             }
             .hotdeal-products  {
-                width: 100;
+                position: relative;
                 padding: 0 20px;
                 img{
-                    width: 100%;
                     height: 100%;
                     object-fit: cover;
                     border: 1px solid #e5e5e5;
 
                 }
             }
-            .hotdeals-content{
+            .hotdeals-content{ 
                 .product-layout{
-                    width: 100%;
                     padding: 0 20px 10px 20px;
                     .image{
                         margin-right: 10px;
                         img{
                             width: 90px;
                             height: 100px;
-                            object-fit: cover;
+                            // object-fit: cover;
                             border: 1px solid #e5e5e5;
                         }
                     }
@@ -305,8 +328,44 @@ main{
                 }
                 
             }
-            
+            .hover-img{
+                position: absolute;
+                top: 0;
+                margin: 0 20px;
+                left: 0;
+                opacity: 0;
+                width: 264px;
+                transition: all 410ms ease-in-out;
 
+                
+            }          
+            .button-group{
+                position: absolute;
+                left: 90px;
+                top: 210px;
+                opacity: 0;
+               
+                button{
+                    width: 40px;
+                    height: 40px;
+                    border: none;
+                    background-color: #51aa1b;
+                    border-radius: 50%;
+                    fill: #fff;
+                    transition: all 410ms ease-in-out; 
+                    transition-duration: 5s;
+                    color: #fff;
+                    img{
+                        border: none;
+                        color: #fff;
+                        object-fit: contain;
+                    }
+                }
+            } 
+        }
+        &__hotdeal:hover .hover-img,&__hotdeal:hover .button-group{
+            opacity: 1;
+            transition: all 410ms ease-in-out;        
         }
         &__supplier{
             padding: 20px;
@@ -404,11 +463,49 @@ main{
                     }
                    
                 }
-            }
-           
+            }    
             .content{
                 .card{
                     margin: 0 5px;
+                    .lbl-discount{
+                        span{
+                            position: absolute;
+                            left: 10px;
+                            font-size: 9px;
+                            font-weight: 700;
+                            line-height: 21px;
+                            width: 60px;
+                            text-transform: uppercase;
+                            top: 10px;
+                            z-index: 100;
+                            color: #fff;
+                            right: 10px;
+                            text-align: center;
+                            background-color: #ff7878;
+                            letter-spacing: 1px;
+                        }
+                    }
+                    .button-group{
+                        position: absolute;
+                        left: 70px;
+                        top: 200px;
+                        opacity: 0;
+                       
+                        button{
+                            width: 40px;
+                            height: 40px;
+                            border: none;
+                            background-color: #51aa1b;
+                            border-radius: 50%;
+                            fill: #fff;
+                            transition: all 300ms ease-in-out;
+                            color: #fff;
+                            img{
+                                border: none;
+                                color: #fff;
+                            }
+                        }
+                    }      
                     .input-group{
                         float: left;
                         width: 100%;
@@ -423,17 +520,15 @@ main{
                             float: none;
                             padding: 0 5px;
                             border:1px solid #e5e5e5;  
+                            margin-right: 15px;
+                            line-height: 30px;
                         }
                         .btn-addcart{
                             border:1px solid #e5e5e5;
-                            background-color: #fff;          
-                                   
-                        }
-                        .btn-addcart:hover{
-                            background-color: #51AA1B;
-                            transition: all 0.8s ease-in-out ;
-                        }
-                        
+                            background-color: #fff;   
+                            padding: 0px 20px;
+                                              
+                        }          
                     }
                 }
                 .card:first-child {               
@@ -444,6 +539,29 @@ main{
                 }
                 img{
                     border: 1px solid #e5e5e5;
+                    background-color: transparent;
+                    position: relative;
+                    
+                }
+                .hover-img{
+                    top: 0;
+                    left: 0;
+                    margin: 0 auto;
+                    opacity: 0;
+                    position: absolute;
+                    right: 0;
+                    transition: all 400ms ease-in-out 0s;                  
+                }
+                img:hover {
+                    opacity: 1;
+                }
+                .card:hover .button-group{
+                    opacity: 1;       
+                    transition: all 400ms ease-in-out 0s;                  
+                }
+                .card:hover .btn-addcart{
+                    background-color: #51AA1B;
+                    transition: all 400ms ease-in-out 0s;                        
                 }
                
             }
@@ -526,13 +644,23 @@ main{
     }
     .logo-slider{
         background-color: #fff;
+   
         .logo-item{
-            width: 100%;
+            img{
+                opacity: 0.7;
+            }
             
+        }
+        .logo-item img:hover{
+            opacity: 1;
         }
     }
    
 }
+
+
+
+
 /*-------END MAIN--------- */
 
 /*-------FOOTER--------- */
