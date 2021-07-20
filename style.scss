@@ -215,6 +215,9 @@ header{
         }
     }
 }
+.navbar-responsive{
+    display: none;
+}
 /*-------MAIN--------- */
 main{
     .left-side{
@@ -483,6 +486,7 @@ main{
             .content{
                 .card{
                     margin: 0 5px;
+                    width: 100%;
                     .lbl-discount{
                         span{
                             position: absolute;
@@ -695,7 +699,10 @@ footer{
                 color: #51AA1B;
                 letter-spacing: 1px;
                 margin-bottom: 20px;
-                font-weight: bold;          
+                font-weight: bold;   
+                i{
+                    display: none;
+                }       
             }
             .listf{
                 
@@ -785,7 +792,91 @@ footer{
 //reponsive
 
 // Extra small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) {}
+@media (max-width: 575.98px) {
+    nav{
+        
+        .header-social{          
+            .socials-block{
+                .toogle-category{
+                    display: block;
+                    position: absolute;
+                    top: 10px;
+                    font-size: 17px;
+                }
+                ul{
+                    display: none;
+                }
+            }
+        }
+        .hidden-xs{
+            display: none !important;
+        }
+        .top-link{
+            li{
+                
+                a{
+                    .hidden-icon{
+                        display: inherit;
+                    }
+                }
+                .dropdown-menu{
+                    left: -70px;
+                }
+            }
+        }
+        
+    }
+    header{
+        .search-by-category{
+            margin-top: 10px;
+            .form-search
+            {
+                .form-control {
+                    width: 100%;
+                }
+                .select-categories{
+                    display: none;
+                }
+                button{
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }     
+        .sm-cart{
+            position: absolute;
+            right: 0;
+        }
+        .contact{
+            img{
+                position: absolute;
+                left: -30px;
+            }
+        }
+        .cart img {
+            position: absolute;
+            right: 65px;
+        }
+        
+    }
+    .allmenu{
+        display: none;
+    }
+    main{
+        .left-side{
+            display: none;      
+        }
+        .right-side{
+           &__category-tab{
+               .content{
+                display: inline-block;
+                word-break: break-word;
+               }
+           }
+        }
+        
+    }
+}
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767.98px) { 
@@ -828,10 +919,14 @@ footer{
             .form-search
             {
                 .form-control {
-                    width: 460px;
+                    width: 100%;
                 }
                 .select-categories{
                     display: none;
+                }
+                button{
+                    position: absolute;
+                    right: 0;
                 }
             }
         }     
@@ -849,19 +944,65 @@ footer{
     .allmenu{
         display: none;
     }
+    .navbar-responsive{
+        // display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        width: 250px;
+        height: 100%;
+        z-index: 9999999999999999;
+        .nav-header{
+            background-color: #161616;
+            padding: 12px 15px;
+            width: 100%;
+            display: inline-block;
+            color: #fff;
+            letter-spacing: 1px;
+            position: relative;
+            span{
+                i{
+                    position: absolute;
+                    right: 20px;              
+                }
+            }
+        }
+        .nav-menu{
+            ul{
+                margin-left: -30px;
+                li{
+                    color: #272727;
+                    cursor: pointer;
+                    padding: 15px 15px;
+                    min-height: 15px;
+                    letter-spacing: 0.4px;
+                    background-color: transparent;
+                    border-bottom: 1px solid #eaeaea;
+                }
+            }
+        }
+    }
     main{
         .left-side{
             display: none;      
         }
-        .right-side{
-           &__category-tab{
-               .content{
-                display: inline-block;
-                word-break: break-word;
-               }
-           }
-        }
         
+    }
+    footer{
+        .footer{
+            .aboutf{
+                h5{
+                    i{
+                        display: block;
+                        float: right;
+                    }
+                }
+                .listf{
+                    display: none;
+                }
+            }
+        }
     }
 }
 
