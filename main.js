@@ -1,16 +1,28 @@
 // Toggle top navbar 
-$(".myAccount").click(function () { 
-  $(".dropdown-menu-account").toggle();
-});
-
-$(".Currency").click(function () { 
-  $(".dropdown-menu-currency").toggle();
-});
-
-$(".Language").click(function () { 
-  $(".dropdown-menu-language").toggle();
-});
-
+$("#myAccount").on({
+  click:function(){
+    $(".dropdown-menu-account").toggle()
+  },
+  mouseleave:function() { 
+    $(".dropdown-menu-account").hide()
+  },
+})
+$("#Currency").on({
+  click:function(){
+    $(".dropdown-menu-currency").toggle()
+  },
+  mouseleave:function() { 
+    $(".dropdown-menu-currency").hide()
+  },
+})
+$("#Language").on({
+  click:function(){
+    $(".dropdown-menu-language").toggle()
+  },
+  mouseleave:function() { 
+    $(".dropdown-menu-language").hide()
+  },
+})
 
 // Initialize Swiper 
 var swiper = new Swiper(".mySwiper", {
@@ -40,8 +52,35 @@ var swiper = new Swiper(".mySwiper", {
       spaceBetween: 10
     }
   },
+  navigation: {
+    nextEl: ".owl-next",
+    prevEl: ".owl-prev",
+  },
   
 });
+//hotdeal
+var swiperHotDeal = new Swiper(".mySwiper-hotdeal", {
+  slidesPerView: 1,
+  navigation: {
+    nextEl: ".hotdeal-next",
+    prevEl: ".hotdeal-prev",
+  },
+});
+var swiperHotDeal = new Swiper(".mySwiper-hotdeals", {
+  slidesPerView: 1,
+  navigation: {
+    nextEl: ".hotdeals-next",
+    prevEl: ".hotdeals-prev",
+  },
+});
+var swiperTopDeal = new Swiper(".mySwiper-topdeal", {
+  slidesPerView: 1,
+  navigation: {
+    nextEl: ".topdeal-next",
+    prevEl: ".topdeal-prev",
+  },
+});
+//end hotdeal
 //  Swiper SlideShow (right side)
 var swiperSlideShow = new Swiper(".mySwiperSlideShow", {
   navigation: {
@@ -54,7 +93,7 @@ var swiperSlideShow = new Swiper(".mySwiperSlideShow", {
   },
 });
 //swiper specials
-var swiperSpecials = new Swiper(".swipSpecials", {
+var swiperSpecials = new Swiper(".mySwipSpecials", {
   slidesPerView: 4,
   spaceBetween: 10,
   breakpoints: {
@@ -80,6 +119,10 @@ var swiperSpecials = new Swiper(".swipSpecials", {
       slidesPerView: 4,
       spaceBetween: 10
     }
+  },
+  navigation: {
+    nextEl: ".specials-next",
+    prevEl: ".specials-prev",
   },
   
 });
@@ -148,6 +191,10 @@ var swiperBlog = new Swiper(".mySwiperBlog", {
       spaceBetween: 10
     }
   },
+  navigation: {
+    nextEl: ".blog-next",
+    prevEl: ".blog-prev",
+  },
   
 });
 //end blog
@@ -185,5 +232,3 @@ $( ".toogle-category" ).click(function() {
 $( "#close" ).click(function() {
   $( ".navbar-responsive" ).hide( "slow");
 });
-
-

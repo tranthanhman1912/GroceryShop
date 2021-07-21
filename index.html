@@ -26,8 +26,6 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- title -->
     <title>Grocery Shop</title>
-    <!-- ajax -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -52,18 +50,18 @@
                 </div>
                 <div class="col-sm-8 col-xs-5 col-lg-7 text-right">
                     <ul class="top-link">
-                        <li class="coupon"><span class="hidden-xs"><strong>COUPON: <span> </span>
+                        <li id="coupon"><span class="hidden-xs"><strong>COUPON: <span> </span>
                                 </strong>GROCERY100FF</span>
                             <a href="#"><i class="far fa-heart hidden-icon"></i></a>
                         </li>
-                        <li class="myAccount"><span class="hidden-xs">My Account</span><a href="#"><i
+                        <li id="myAccount"><span class="hidden-xs">My Account</span><a href="#"><i
                                     class="fas fa-user hidden-icon"></i><i class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu dropdown-menu-account">
                                 <li><a href="#"><i class="far fa-address-book"></i>Register</a></li>
                                 <li><a href="#"><i class="fas fa-sign-in-alt"></i>Login</a></li>
                             </ul>
                         </li>
-                        <li class="Currency"><span class="hidden-xs"> <strong>$ <span> </span></strong>Currency </span>
+                        <li id="Currency"><span class="hidden-xs"> <strong>$ <span> </span></strong>Currency </span>
                             <a href="#"><i class="fas fa-dollar-sign hidden-icon"></i><i
                                     class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu dropdown-menu-currency">
@@ -72,7 +70,7 @@
                                 <li><a href="#"><i class="fas fa-yen-sign"></i>Yen</a></li>
                             </ul>
                         </li>
-                        <li class="Language"><span class="hidden-xs">Language</span> <a href="#"><i
+                        <li id="Language"><span class="hidden-xs">Language</span> <a href="#"><i
                                     class="hidden-icon"><img src="./img/language/en-gb.png" alt=""></i><i
                                     class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu dropdown-menu-language">
@@ -163,7 +161,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6  col-6 text-right sm-cart d-flex">
+                <div class="col-lg-3 col-md-4 col-sm-5  col-6 text-right sm-cart d-flex">
                     <div class="contact">
                         <a href="#">
                             <img src="./img/icon-call.png" alt="phone-call">
@@ -204,9 +202,9 @@
         </div>
     </div>
     <div class="navbar-responsive">
-        <div class="nav-header">         
+        <div class="nav-header">
             <span>CATEGORIES</span>
-            <span><i class="fas fa-times"id="close"></i></span>
+            <span><i class="fas fa-times" id="close"></i></span>
         </div>
         <div class="nav-menu">
             <ul>
@@ -245,262 +243,279 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="left-side__hotdeal pro-bg w-100 border">
-                            <div class="title  d-flex ">
-                                <h2>HOT DEAL</h2>
-                                <div class="owl-button d-inline-flex">
-                                    <div class="owl-prev"><a href="#"><i class="fa fa-angle-left"
-                                                aria-hidden="true"></i></a></div>
-                                    <div class="owl-next"><a href="#"><i class="fa fa-angle-right"
-                                                aria-hidden="true"></i></a></div>
+                        <div class="left-side__hotdeal pro-bg w-100 border">                          
+                            <div class="swiper-container mySwiper-hotdeal">
+                                <div class="title  d-flex ">
+                                    <h2>HOT DEAL</h2>
+                                    <div class="owl-button d-inline-flex">
+                                        <div class="owl-prev hotdeal-prev"><a href="#"><i class="fa fa-angle-left"
+                                                    aria-hidden="true"></i></a></div>
+                                        <div class="owl-next hotdeal-next"><a href="#"><i class="fa fa-angle-right"
+                                                    aria-hidden="true"></i></a></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="hotdeal-products">
+                                            <a href="#">
+                                                <img class="card-img-top" src="img/products/product1.jpg"
+                                                    alt="Daily Fruice">
+                                                <img class="card-img-top hover-img" src="img/products/product2.jpg"
+                                                    alt="Card image cap">
+                                            </a>
+                                            <!-- image hover -->
+                                            <div class="button-group text-center">
+                                                <button type="button" data-toggle="tooltip" title="" class="pwish"
+                                                    data-original-title="Add to Wish List"><img
+                                                        src="./img/svg/heart.svg" width="18px" height="18px"
+                                                        alt="wish"></button>
+                                                <button type="button" data-toggle="tooltip" title="" class="pcom"
+                                                    data-original-title="Compare"><img src="./img/chart.png"
+                                                        width="18px" height="18px" alt=""></button>
+                                                <button type="button" data-toggle="tooltip" title="" class="addtocart"
+                                                    data-original-title="Compare"><img src="./img/svg/shopping-cart.svg"
+                                                        width="18px" height="18px" alt="addtocart"></button>
+                                            </div>
+                                            <!--end img hover  -->
+                                        </div>
+                                        <div class="card-body">
+                                            <h8 class="card-title text-uppercase ">Daily Juice 30"</h8>
+                                            <p class="card-text font-weight-bold mb-0">$65.00 <span
+                                                    style="color:#999; text-decoration: line-through; margin-left: 5px;">$120.00</span>
+                                            </p>
+                                            <div class="rating">
+                                                <span style="color: gold;">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="hotdeal-products">
+                                            <a href="#">
+                                                <img class="card-img-top" src="img/products/product3.jpg"
+                                                    alt="Daily Fruice">
+                                                <img class="card-img-top hover-img" src="img/products/product4.jpg"
+                                                    alt="Card image cap">
+                                            </a>
+                                            <!-- image hover -->
+                                            <div class="button-group text-center">
+                                                <button type="button" data-toggle="tooltip" title="" class="pwish"
+                                                    data-original-title="Add to Wish List"><img
+                                                        src="./img/svg/heart.svg" width="18px" height="18px"
+                                                        alt="wish"></button>
+                                                <button type="button" data-toggle="tooltip" title="" class="pcom"
+                                                    data-original-title="Compare"><img src="./img/chart.png"
+                                                        width="18px" height="18px" alt=""></button>
+                                                <button type="button" data-toggle="tooltip" title="" class="addtocart"
+                                                    data-original-title="Compare"><img src="./img/svg/shopping-cart.svg"
+                                                        width="18px" height="18px" alt="addtocart"></button>
+                                            </div>
+                                            <!--end img hover  -->
+                                        </div>
+                                        <div class="card-body">
+                                            <h8 class="card-title text-uppercase ">Daily Juice 30"</h8>
+                                            <p class="card-text font-weight-bold mb-0">$65.00 <span
+                                                    style="color:#999; text-decoration: line-through; margin-left: 5px;">$120.00</span>
+                                            </p>
+                                            <div class="rating">
+                                                <span style="color: gold;">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="hotdeal-products">
+                                            <a href="#">
+                                                <img class="card-img-top" src="img/products/product5.jpg"
+                                                    alt="Daily Fruice">
+                                                <img class="card-img-top hover-img" src="img/products/product6.jpg"
+                                                    alt="Card image cap">
+                                            </a>
+                                            <!-- image hover -->
+                                            <div class="button-group text-center">
+                                                <button type="button" data-toggle="tooltip" title="" class="pwish"
+                                                    data-original-title="Add to Wish List"><img
+                                                        src="./img/svg/heart.svg" width="18px" height="18px"
+                                                        alt="wish"></button>
+                                                <button type="button" data-toggle="tooltip" title="" class="pcom"
+                                                    data-original-title="Compare"><img src="./img/chart.png"
+                                                        width="18px" height="18px" alt=""></button>
+                                                <button type="button" data-toggle="tooltip" title="" class="addtocart"
+                                                    data-original-title="Compare"><img src="./img/svg/shopping-cart.svg"
+                                                        width="18px" height="18px" alt="addtocart"></button>
+                                            </div>
+                                            <!--end img hover  -->
+                                        </div>
+                                        <div class="card-body">
+                                            <h8 class="card-title text-uppercase ">Daily Juice 30"</h8>
+                                            <p class="card-text font-weight-bold mb-0">$65.00 <span
+                                                    style="color:#999; text-decoration: line-through; margin-left: 5px;">$120.00</span>
+                                            </p>
+                                            <div class="rating">
+                                                <span style="color: gold;">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="hotdeal-products">
-                                <a href="#">
-                                    <img class="card-img-top" src="img/products/product4.jpg" alt="Daily Fruice">
-                                    <img class="card-img-top hover-img" src="img/products/product3.jpg"
-                                        alt="Card image cap">
-                                </a>
-                                <!-- image hover -->
-                                <div class="button-group text-center">
-                                    <button type="button" data-toggle="tooltip" title="" class="pwish"
-                                        data-original-title="Add to Wish List"><img src="./img/svg/heart.svg"
-                                            width="18px" height="18px" alt="wish"></button>
-                                    <button type="button" data-toggle="tooltip" title="" class="pcom"
-                                        data-original-title="Compare"><img src="./img/chart.png" width="18px"
-                                            height="18px" alt=""></button>
-                                    <button type="button" data-toggle="tooltip" title="" class="addtocart"
-                                        data-original-title="Compare"><img src="./img/svg/shopping-cart.svg"
-                                            width="18px" height="18px" alt="addtocart"></button>
-                                </div>
-                                <!--end img hover  -->
-                            </div>
-                            <div class="card-body">
-                                <h8 class="card-title text-uppercase ">Daily Juice 30"</h8>
-                                <p class="card-text font-weight-bold mb-0">$65.00 <span
-                                        style="color:#999; text-decoration: line-through; margin-left: 5px;">$120.00</span>
-                                </p>
-                                <div class="rating">
-                                    <span style="color: gold;">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </span>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="left-side__hotdeals pro-bg w-100 border">
                             <div class="title d-flex ">
                                 <h2>HOT DEALS</h2>
                                 <div class="owl-button d-inline-flex">
-                                    <div class="owl-prev"><a href="#carouselExampleControls-hotdeal" role="button"
-                                            data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                                    <div class="owl-prev hotdeals-prev"><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
                                     </div>
-                                    <div class="owl-next"><a href="#carouselExampleControls-hotdeal" role="button"
-                                            data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <div class="owl-next hotdeals-next"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="hotdeals-content">
-                                <div id="carouselExampleControls-hotdeal" class="carousel slide" data-ride="false">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product1.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Vegatable Delight</a></h4>
-                                                            <p class="price">$65.00</p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product2.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Cookie Matcha</a></h4>
-                                                            <p class="price"><strong>$65.00</strong>
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product3.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Banana Snack</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                            </div>                         
+                            <div class="swiper-container mySwiper-hotdeals">
+                                <div class="swiper-wrapper">
+                                  <div class="swiper-slide"> <div class="hotdeals-content">
+                                    <div class="product-layout d-flex">
+                                        <div class="image col-xs-4">
+                                            <img src="./img/products/product1.jpg" alt="">
                                         </div>
-                                        <div class="carousel-item">
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product2.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Daily Fruice</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
+                                        <div class="col-xs-8">
+                                            <div class="caption text-left">
+                                                <h5><a href="#">Vegatable Delight</a></h4>
+                                                    <p class="price">$65.00</p>
+                                                    <div class="rating">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product1.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Vegie Delight</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product3.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Snack Ori</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product2.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Organ Fruid</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product3.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Frosty Fruits</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product1.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Vegie Delight</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="product-layout d-flex">
+                                        <div class="image col-xs-4">
+                                            <img src="./img/products/product2.jpg" alt="">
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="caption text-left">
+                                                <h5><a href="#">Cookie Matcha</a></h4>
+                                                    <p class="price"><strong>$65.00</strong>
+                                                    </p>
+                                                    <div class="rating">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-layout d-flex">
+                                        <div class="image col-xs-4">
+                                            <img src="./img/products/product3.jpg" alt="">
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="caption text-left">
+                                                <h5><a href="#">Banana Snack</a></h4>
+                                                    <p class="price">$65.00
+                                                    </p>
+                                                    <div class="rating">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div></div>
+                                  <div class="swiper-slide"> <div class="hotdeals-content">
+                                    <div class="product-layout d-flex">
+                                        <div class="image col-xs-4">
+                                            <img src="./img/products/product1.jpg" alt="">
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="caption text-left">
+                                                <h5><a href="#">Vegatable Delight</a></h4>
+                                                    <p class="price">$65.00</p>
+                                                    <div class="rating">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-layout d-flex">
+                                        <div class="image col-xs-4">
+                                            <img src="./img/products/product2.jpg" alt="">
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="caption text-left">
+                                                <h5><a href="#">Cookie Matcha</a></h4>
+                                                    <p class="price"><strong>$65.00</strong>
+                                                    </p>
+                                                    <div class="rating">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-layout d-flex">
+                                        <div class="image col-xs-4">
+                                            <img src="./img/products/product3.jpg" alt="">
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="caption text-left">
+                                                <h5><a href="#">Banana Snack</a></h4>
+                                                    <p class="price">$65.00
+                                                    </p>
+                                                    <div class="rating">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div></div>
                                 </div>
                             </div>
                         </div>
@@ -508,212 +523,142 @@
                             <div class="title d-flex ">
                                 <h2>TOP DEALS</h2>
                                 <div class="owl-button d-inline-flex">
-                                    <div class="owl-prev"><a href="#carouselExampleControls-topdeal" role="button"
-                                            data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                                    <div class="owl-prev topdeal-prev"><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
                                     </div>
-                                    <div class="owl-next"><a href="#carouselExampleControls-topdeal" role="button"
-                                            data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                    <div class="owl-next topdeal-next"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="hotdeals-content">
-                                <div id="carouselExampleControls-topdeal" class="carousel slide" data-ride="false">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product1.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Vegatable Delight</a></h4>
-                                                            <p class="price">$65.00</p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product2.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Cookie Matcha</a></h4>
-                                                            <p class="price"><strong>$65.00</strong>
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product3.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Banana Snack</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                            <div class="swiper-container mySwiper-topdeal">
+                                <div class="swiper-wrapper">
+                                  <div class="swiper-slide"> <div class="hotdeals-content">
+                                    <div class="product-layout d-flex">
+                                        <div class="image col-xs-4">
+                                            <img src="./img/products/product1.jpg" alt="">
                                         </div>
-                                        <div class="carousel-item">
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product2.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Daily Fruice</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
+                                        <div class="col-xs-8">
+                                            <div class="caption text-left">
+                                                <h5><a href="#">Vegatable Delight</a></h4>
+                                                    <p class="price">$65.00</p>
+                                                    <div class="rating">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product1.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Vegie Delight</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product3.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Snack Ori</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product2.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Organ Fruid</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product3.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Frosty Fruits</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="product-layout d-flex">
-                                                <div class="image col-xs-4">
-                                                    <img src="./img/products/product1.jpg" alt="">
-                                                </div>
-                                                <div class="col-xs-8">
-                                                    <div class="caption text-left">
-                                                        <h5><a href="#">Vegie Delight</a></h4>
-                                                            <p class="price">$65.00
-                                                            </p>
-                                                            <div class="rating">
-                                                                <span style="color: gold;">
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                                    <i class="fas fa-star-half-alt"></i>
-                                                                </span>
-                                                            </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="product-layout d-flex">
+                                        <div class="image col-xs-4">
+                                            <img src="./img/products/product2.jpg" alt="">
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="caption text-left">
+                                                <h5><a href="#">Cookie Matcha</a></h4>
+                                                    <p class="price"><strong>$65.00</strong>
+                                                    </p>
+                                                    <div class="rating">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-layout d-flex">
+                                        <div class="image col-xs-4">
+                                            <img src="./img/products/product3.jpg" alt="">
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="caption text-left">
+                                                <h5><a href="#">Banana Snack</a></h4>
+                                                    <p class="price">$65.00
+                                                    </p>
+                                                    <div class="rating">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div></div>
+                                  <div class="swiper-slide"> <div class="hotdeals-content">
+                                    <div class="product-layout d-flex">
+                                        <div class="image col-xs-4">
+                                            <img src="./img/products/product1.jpg" alt="">
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="caption text-left">
+                                                <h5><a href="#">Vegatable Delight</a></h4>
+                                                    <p class="price">$65.00</p>
+                                                    <div class="rating">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-layout d-flex">
+                                        <div class="image col-xs-4">
+                                            <img src="./img/products/product2.jpg" alt="">
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="caption text-left">
+                                                <h5><a href="#">Cookie Matcha</a></h4>
+                                                    <p class="price"><strong>$65.00</strong>
+                                                    </p>
+                                                    <div class="rating">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-layout d-flex">
+                                        <div class="image col-xs-4">
+                                            <img src="./img/products/product3.jpg" alt="">
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <div class="caption text-left">
+                                                <h5><a href="#">Banana Snack</a></h4>
+                                                    <p class="price">$65.00
+                                                    </p>
+                                                    <div class="rating">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div></div>
                                 </div>
                             </div>
                         </div>
@@ -796,11 +741,109 @@
                                     <div class="swiper-slide">
                                         <div class="card-deck content ">
                                             <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
+                                                <a href=""><img class="card-img-top" src="img/products/product1.jpg"
                                                         alt="Card image cap"></a>
                                                 <!-- image hover -->
                                                 <a href=""><img class="card-img-top hover-img"
                                                         src="img/products/product2.jpg" alt="Card image cap"></a>
+                                                <div class="button-group text-center">
+                                                    <button type="button" data-toggle="tooltip" title="" class="pwish"
+                                                        data-original-title="Add to Wish List"><img
+                                                            src="./img/svg/heart.svg" width="18px" height="18px"
+                                                            alt="wish"></button>
+                                                    <button type="button" data-toggle="tooltip" title="" class="pcom"
+                                                        data-original-title="Compare"><img src="./img/chart.png"
+                                                            width="18px" height="18px" alt=""></button>
+                                                </div>
+                                                <!--end img hover  -->
+                                                <!--discount lable-->
+                                                <div class="lbl-discount">
+                                                    <span>Save 21%</span>
+                                                </div>
+                                                <!-- end discount lable -->
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><a href="#">Vegie Delight</a></h5>
+                                                    <p class="card-text m-0"><strong>$65.00</strong></p>
+                                                    <div class="ratting">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="input-group mt-md-4">
+                                                        <label for="" class="lable-qty mr-md-2 mb-0">Qty</label>
+                                                        <input class=" input-qty" type="number" name="qty" value="1"
+                                                            min="1" step="1">
+                                                        <button class="btn-addcart  " type="button">
+                                                            <img class="border-0" src="./img/svg/shopping-cart.svg"
+                                                                width="20px" height="20px" alt="button addtocart ">
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card-deck content ">
+                                            <div class="card border-0">
+                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
+                                                        alt="Card image cap"></a>
+                                                <!-- image hover -->
+                                                <a href=""><img class="card-img-top hover-img"
+                                                        src="img/products/product4.jpg" alt="Card image cap"></a>
+                                                <div class="button-group text-center">
+                                                    <button type="button" data-toggle="tooltip" title="" class="pwish"
+                                                        data-original-title="Add to Wish List"><img
+                                                            src="./img/svg/heart.svg" width="18px" height="18px"
+                                                            alt="wish"></button>
+                                                    <button type="button" data-toggle="tooltip" title="" class="pcom"
+                                                        data-original-title="Compare"><img src="./img/chart.png"
+                                                            width="18px" height="18px" alt=""></button>
+                                                </div>
+                                                <!--end img hover  -->
+                                                <!--discount lable-->
+                                                <div class="lbl-discount">
+                                                    <span>Save 21%</span>
+                                                </div>
+                                                <!-- end discount lable -->
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><a href="#">Vegie Delight</a></h5>
+                                                    <p class="card-text m-0"><strong>$65.00</strong></p>
+                                                    <div class="ratting">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="input-group mt-md-4">
+                                                        <label for="" class="lable-qty mr-md-2 mb-0">Qty</label>
+                                                        <input class=" input-qty" type="number" name="qty" value="1"
+                                                            min="1" step="1">
+                                                        <button class="btn-addcart  " type="button">
+                                                            <img class="border-0" src="./img/svg/shopping-cart.svg"
+                                                                width="20px" height="20px" alt="button addtocart ">
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card-deck content ">
+                                            <div class="card border-0">
+                                                <a href=""><img class="card-img-top" src="img/products/product5.jpg"
+                                                        alt="Card image cap"></a>
+                                                <!-- image hover -->
+                                                <a href=""><img class="card-img-top hover-img"
+                                                        src="img/products/product6.jpg" alt="Card image cap"></a>
                                                 <div class="button-group text-center">
                                                     <button type="button" data-toggle="tooltip" title="" class="pwish"
                                                         data-original-title="Add to Wish List"><img
@@ -846,11 +889,11 @@
                                     <div class="swiper-slide">
                                         <div class="card-deck content ">
                                             <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
+                                                <a href=""><img class="card-img-top" src="img/products/product6.jpg"
                                                         alt="Card image cap"></a>
                                                 <!-- image hover -->
                                                 <a href=""><img class="card-img-top hover-img"
-                                                        src="img/products/product2.jpg" alt="Card image cap"></a>
+                                                        src="img/products/product5.jpg" alt="Card image cap"></a>
                                                 <div class="button-group text-center">
                                                     <button type="button" data-toggle="tooltip" title="" class="pwish"
                                                         data-original-title="Add to Wish List"><img
@@ -896,11 +939,11 @@
                                     <div class="swiper-slide">
                                         <div class="card-deck content ">
                                             <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
+                                                <a href=""><img class="card-img-top" src="img/products/product4.jpg"
                                                         alt="Card image cap"></a>
                                                 <!-- image hover -->
                                                 <a href=""><img class="card-img-top hover-img"
-                                                        src="img/products/product2.jpg" alt="Card image cap"></a>
+                                                        src="img/products/product3.jpg" alt="Card image cap"></a>
                                                 <div class="button-group text-center">
                                                     <button type="button" data-toggle="tooltip" title="" class="pwish"
                                                         data-original-title="Add to Wish List"><img
@@ -946,111 +989,11 @@
                                     <div class="swiper-slide">
                                         <div class="card-deck content ">
                                             <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
+                                                <a href=""><img class="card-img-top" src="img/products/product2.jpg"
                                                         alt="Card image cap"></a>
                                                 <!-- image hover -->
                                                 <a href=""><img class="card-img-top hover-img"
-                                                        src="img/products/product2.jpg" alt="Card image cap"></a>
-                                                <div class="button-group text-center">
-                                                    <button type="button" data-toggle="tooltip" title="" class="pwish"
-                                                        data-original-title="Add to Wish List"><img
-                                                            src="./img/svg/heart.svg" width="18px" height="18px"
-                                                            alt="wish"></button>
-                                                    <button type="button" data-toggle="tooltip" title="" class="pcom"
-                                                        data-original-title="Compare"><img src="./img/chart.png"
-                                                            width="18px" height="18px" alt=""></button>
-                                                </div>
-                                                <!--end img hover  -->
-                                                <!--discount lable-->
-                                                <div class="lbl-discount">
-                                                    <span>Save 21%</span>
-                                                </div>
-                                                <!-- end discount lable -->
-                                                <div class="card-body">
-                                                    <h5 class="card-title"><a href="#">Vegie Delight</a></h5>
-                                                    <p class="card-text m-0"><strong>$65.00</strong></p>
-                                                    <div class="ratting">
-                                                        <span style="color: gold;">
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star-half-alt"></i>
-                                                        </span>
-                                                    </div>
-                                                    <div class="input-group mt-md-4">
-                                                        <label for="" class="lable-qty mr-md-2 mb-0">Qty</label>
-                                                        <input class=" input-qty" type="number" name="qty" value="1"
-                                                            min="1" step="1">
-                                                        <button class="btn-addcart  " type="button">
-                                                            <img class="border-0" src="./img/svg/shopping-cart.svg"
-                                                                width="20px" height="20px" alt="button addtocart ">
-                                                        </button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-deck content ">
-                                            <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
-                                                        alt="Card image cap"></a>
-                                                <!-- image hover -->
-                                                <a href=""><img class="card-img-top hover-img"
-                                                        src="img/products/product2.jpg" alt="Card image cap"></a>
-                                                <div class="button-group text-center">
-                                                    <button type="button" data-toggle="tooltip" title="" class="pwish"
-                                                        data-original-title="Add to Wish List"><img
-                                                            src="./img/svg/heart.svg" width="18px" height="18px"
-                                                            alt="wish"></button>
-                                                    <button type="button" data-toggle="tooltip" title="" class="pcom"
-                                                        data-original-title="Compare"><img src="./img/chart.png"
-                                                            width="18px" height="18px" alt=""></button>
-                                                </div>
-                                                <!--end img hover  -->
-                                                <!--discount lable-->
-                                                <div class="lbl-discount">
-                                                    <span>Save 21%</span>
-                                                </div>
-                                                <!-- end discount lable -->
-                                                <div class="card-body">
-                                                    <h5 class="card-title"><a href="#">Vegie Delight</a></h5>
-                                                    <p class="card-text m-0"><strong>$65.00</strong></p>
-                                                    <div class="ratting">
-                                                        <span style="color: gold;">
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star-half-alt"></i>
-                                                        </span>
-                                                    </div>
-                                                    <div class="input-group mt-md-4">
-                                                        <label for="" class="lable-qty mr-md-2 mb-0">Qty</label>
-                                                        <input class=" input-qty" type="number" name="qty" value="1"
-                                                            min="1" step="1">
-                                                        <button class="btn-addcart  " type="button">
-                                                            <img class="border-0" src="./img/svg/shopping-cart.svg"
-                                                                width="20px" height="20px" alt="button addtocart ">
-                                                        </button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-deck content ">
-                                            <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
-                                                        alt="Card image cap"></a>
-                                                <!-- image hover -->
-                                                <a href=""><img class="card-img-top hover-img"
-                                                        src="img/products/product2.jpg" alt="Card image cap"></a>
+                                                        src="img/products/product1.jpg" alt="Card image cap"></a>
                                                 <div class="button-group text-center">
                                                     <button type="button" data-toggle="tooltip" title="" class="pwish"
                                                         data-original-title="Add to Wish List"><img
@@ -1162,11 +1105,61 @@
                                     <div class="swiper-slide">
                                         <div class="card-deck content ">
                                             <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
+                                                <a href=""><img class="card-img-top" src="img/products/product2.jpg"
                                                         alt="Card image cap"></a>
                                                 <!-- image hover -->
                                                 <a href=""><img class="card-img-top hover-img"
-                                                        src="img/products/product2.jpg" alt="Card image cap"></a>
+                                                        src="img/products/product1.jpg" alt="Card image cap"></a>
+                                                <div class="button-group text-center">
+                                                    <button type="button" data-toggle="tooltip" title="" class="pwish"
+                                                        data-original-title="Add to Wish List"><img
+                                                            src="./img/svg/heart.svg" width="18px" height="18px"
+                                                            alt="wish"></button>
+                                                    <button type="button" data-toggle="tooltip" title="" class="pcom"
+                                                        data-original-title="Compare"><img src="./img/chart.png"
+                                                            width="18px" height="18px" alt=""></button>
+                                                </div>
+                                                <!--end img hover  -->
+                                                <!--discount lable-->
+                                                <div class="lbl-discount">
+                                                    <span>Save 21%</span>
+                                                </div>
+                                                <!-- end discount lable -->
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><a href="#">Vegie Delight</a></h5>
+                                                    <p class="card-text m-0"><strong>$65.00</strong></p>
+                                                    <div class="ratting">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="input-group mt-md-4">
+                                                        <label for="" class="lable-qty mr-md-2 mb-0">Qty</label>
+                                                        <input class=" input-qty" type="number" name="qty" value="1"
+                                                            min="1" step="1">
+                                                        <button class="btn-addcart  " type="button">
+                                                            <img class="border-0" src="./img/svg/shopping-cart.svg"
+                                                                width="20px" height="20px" alt="button addtocart ">
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card-deck content ">
+                                            <div class="card border-0">
+                                                <a href=""><img class="card-img-top" src="img/products/product5.jpg"
+                                                        alt="Card image cap"></a>
+                                                <!-- image hover -->
+                                                <a href=""><img class="card-img-top hover-img"
+                                                        src="img/products/product6.jpg" alt="Card image cap"></a>
                                                 <div class="button-group text-center">
                                                     <button type="button" data-toggle="tooltip" title="" class="pwish"
                                                         data-original-title="Add to Wish List"><img
@@ -1262,11 +1255,11 @@
                                     <div class="swiper-slide">
                                         <div class="card-deck content ">
                                             <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
+                                                <a href=""><img class="card-img-top" src="img/products/product4.jpg"
                                                         alt="Card image cap"></a>
                                                 <!-- image hover -->
                                                 <a href=""><img class="card-img-top hover-img"
-                                                        src="img/products/product2.jpg" alt="Card image cap"></a>
+                                                        src="img/products/product3.jpg" alt="Card image cap"></a>
                                                 <div class="button-group text-center">
                                                     <button type="button" data-toggle="tooltip" title="" class="pwish"
                                                         data-original-title="Add to Wish List"><img
@@ -1312,61 +1305,11 @@
                                     <div class="swiper-slide">
                                         <div class="card-deck content ">
                                             <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
+                                                <a href=""><img class="card-img-top" src="img/products/product5.jpg"
                                                         alt="Card image cap"></a>
                                                 <!-- image hover -->
                                                 <a href=""><img class="card-img-top hover-img"
-                                                        src="img/products/product2.jpg" alt="Card image cap"></a>
-                                                <div class="button-group text-center">
-                                                    <button type="button" data-toggle="tooltip" title="" class="pwish"
-                                                        data-original-title="Add to Wish List"><img
-                                                            src="./img/svg/heart.svg" width="18px" height="18px"
-                                                            alt="wish"></button>
-                                                    <button type="button" data-toggle="tooltip" title="" class="pcom"
-                                                        data-original-title="Compare"><img src="./img/chart.png"
-                                                            width="18px" height="18px" alt=""></button>
-                                                </div>
-                                                <!--end img hover  -->
-                                                <!--discount lable-->
-                                                <div class="lbl-discount">
-                                                    <span>Save 21%</span>
-                                                </div>
-                                                <!-- end discount lable -->
-                                                <div class="card-body">
-                                                    <h5 class="card-title"><a href="#">Vegie Delight</a></h5>
-                                                    <p class="card-text m-0"><strong>$65.00</strong></p>
-                                                    <div class="ratting">
-                                                        <span style="color: gold;">
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star-half-alt"></i>
-                                                        </span>
-                                                    </div>
-                                                    <div class="input-group mt-md-4">
-                                                        <label for="" class="lable-qty mr-md-2 mb-0">Qty</label>
-                                                        <input class=" input-qty" type="number" name="qty" value="1"
-                                                            min="1" step="1">
-                                                        <button class="btn-addcart  " type="button">
-                                                            <img class="border-0" src="./img/svg/shopping-cart.svg"
-                                                                width="20px" height="20px" alt="button addtocart ">
-                                                        </button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-deck content ">
-                                            <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
-                                                        alt="Card image cap"></a>
-                                                <!-- image hover -->
-                                                <a href=""><img class="card-img-top hover-img"
-                                                        src="img/products/product2.jpg" alt="Card image cap"></a>
+                                                        src="img/products/product6.jpg" alt="Card image cap"></a>
                                                 <div class="button-group text-center">
                                                     <button type="button" data-toggle="tooltip" title="" class="pwish"
                                                         data-original-title="Add to Wish List"><img
@@ -1423,14 +1366,14 @@
                             <div class="header d-flex w-100">
                                 <h2>SPECIALS</h2>
                                 <div class="owl-button d-inline-flex">
-                                    <div class="owl-prev"><a href="#"><i class="fa fa-angle-left"
+                                    <div class="owl-prev specials-prev"><a href="#"><i class="fa fa-angle-left"
                                                 aria-hidden="true"></i></a></div>
-                                    <div class="owl-next"><a href="#"><i class="fa fa-angle-right"
+                                    <div class="owl-next specials-next"><a href="#"><i class="fa fa-angle-right"
                                                 aria-hidden="true"></i></a></div>
                                 </div>
                             </div>
                             <!-- Swiper -->
-                            <div class="swiper-container mySwiper swipSpecials">
+                            <div class="swiper-container mySwipSpecials">
                                 <div class="swiper-wrapper" id="swiper-wrapper-specials">
                                     <div class="swiper-slide">
                                         <div class="content d-flex">
@@ -1500,7 +1443,193 @@
                                                 <div class="row">
                                                     <div class="product-layout d-flex">
                                                         <div class="image col-xs-4">
-                                                            <img src="./img/products/product1.jpg" alt="">
+                                                            <img src="./img/products/product3.jpg" alt="">
+                                                        </div>
+                                                        <div class="col-xs-8">
+                                                            <div class="caption text-left">
+                                                                <h5><a href="#">Vegatable</a></h4>
+                                                                    <p class="price"><strong>$65.00<strike
+                                                                                style="color: #999; margin-left: 10px;">$125.00</strike></strong>
+                                                                    </p>
+                                                                    <div class="rating">
+                                                                        <span style="color: gold;">
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fas fa-star-half-alt"></i>
+                                                                        </span>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="product-layout d-flex">
+                                                        <div class="image col-xs-4">
+                                                            <img src="./img/products/product4.jpg" alt="">
+                                                        </div>
+                                                        <div class="col-xs-8">
+                                                            <div class="caption text-left">
+                                                                <h5><a href="#">Cookies</a></h4>
+                                                                    <p class="price"><strong>$65.00<strike
+                                                                                style="color: #999; margin-left: 10px;">$125.00</strike></strong>
+                                                                    </p>
+                                                                    <div class="rating">
+                                                                        <span style="color: gold;">
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fas fa-star-half-alt"></i>
+                                                                        </span>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="content d-flex">
+                                            <div class="col p-0">
+                                                <div class="row">
+                                                    <div class="product-layout d-flex">
+                                                        <div class="image col-xs-4">
+                                                            <img src="./img/products/product5.jpg" alt="">
+                                                        </div>
+                                                        <div class="col-xs-8">
+                                                            <div class="caption text-left">
+                                                                <h5><a href="#">Vegatable</a></h4>
+                                                                    <p class="price"><strong>$65.00<strike
+                                                                                style="color: #999; margin-left: 10px;">$125.00</strike></strong>
+                                                                    </p>
+                                                                    <div class="rating">
+                                                                        <span style="color: gold;">
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fas fa-star-half-alt"></i>
+                                                                        </span>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="product-layout d-flex">
+                                                        <div class="image col-xs-4">
+                                                            <img src="./img/products/product6.jpg" alt="">
+                                                        </div>
+                                                        <div class="col-xs-8">
+                                                            <div class="caption text-left">
+                                                                <h5><a href="#">Cookies</a></h4>
+                                                                    <p class="price"><strong>$65.00<strike
+                                                                                style="color: #999; margin-left: 10px;">$125.00</strike></strong>
+                                                                    </p>
+                                                                    <div class="rating">
+                                                                        <span style="color: gold;">
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fas fa-star-half-alt"></i>
+                                                                        </span>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="content d-flex">
+                                            <div class="col p-0">
+                                                <div class="row">
+                                                    <div class="product-layout d-flex">
+                                                        <div class="image col-xs-4">
+                                                            <img src="./img/products/product3.jpg" alt="">
+                                                        </div>
+                                                        <div class="col-xs-8">
+                                                            <div class="caption text-left">
+                                                                <h5><a href="#">Vegatable</a></h4>
+                                                                    <p class="price"><strong>$65.00<strike
+                                                                                style="color: #999; margin-left: 10px;">$125.00</strike></strong>
+                                                                    </p>
+                                                                    <div class="rating">
+                                                                        <span style="color: gold;">
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fas fa-star-half-alt"></i>
+                                                                        </span>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="product-layout d-flex">
+                                                        <div class="image col-xs-4">
+                                                            <img src="./img/products/product5.jpg" alt="">
+                                                        </div>
+                                                        <div class="col-xs-8">
+                                                            <div class="caption text-left">
+                                                                <h5><a href="#">Cookies</a></h4>
+                                                                    <p class="price"><strong>$65.00<strike
+                                                                                style="color: #999; margin-left: 10px;">$125.00</strike></strong>
+                                                                    </p>
+                                                                    <div class="rating">
+                                                                        <span style="color: gold;">
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fa fa-star"
+                                                                                aria-hidden="true"></i>
+                                                                            <i class="fas fa-star-half-alt"></i>
+                                                                        </span>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="content d-flex">
+                                            <div class="col p-0">
+                                                <div class="row">
+                                                    <div class="product-layout d-flex">
+                                                        <div class="image col-xs-4">
+                                                            <img src="./img/products/product3.jpg" alt="">
                                                         </div>
                                                         <div class="col-xs-8">
                                                             <div class="caption text-left">
@@ -1562,7 +1691,7 @@
                                                 <div class="row">
                                                     <div class="product-layout d-flex">
                                                         <div class="image col-xs-4">
-                                                            <img src="./img/products/product1.jpg" alt="">
+                                                            <img src="./img/products/product6.jpg" alt="">
                                                         </div>
                                                         <div class="col-xs-8">
                                                             <div class="caption text-left">
@@ -1590,193 +1719,7 @@
                                                 <div class="row">
                                                     <div class="product-layout d-flex">
                                                         <div class="image col-xs-4">
-                                                            <img src="./img/products/product2.jpg" alt="">
-                                                        </div>
-                                                        <div class="col-xs-8">
-                                                            <div class="caption text-left">
-                                                                <h5><a href="#">Cookies</a></h4>
-                                                                    <p class="price"><strong>$65.00<strike
-                                                                                style="color: #999; margin-left: 10px;">$125.00</strike></strong>
-                                                                    </p>
-                                                                    <div class="rating">
-                                                                        <span style="color: gold;">
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fas fa-star-half-alt"></i>
-                                                                        </span>
-                                                                    </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="content d-flex">
-                                            <div class="col p-0">
-                                                <div class="row">
-                                                    <div class="product-layout d-flex">
-                                                        <div class="image col-xs-4">
                                                             <img src="./img/products/product1.jpg" alt="">
-                                                        </div>
-                                                        <div class="col-xs-8">
-                                                            <div class="caption text-left">
-                                                                <h5><a href="#">Vegatable</a></h4>
-                                                                    <p class="price"><strong>$65.00<strike
-                                                                                style="color: #999; margin-left: 10px;">$125.00</strike></strong>
-                                                                    </p>
-                                                                    <div class="rating">
-                                                                        <span style="color: gold;">
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fas fa-star-half-alt"></i>
-                                                                        </span>
-                                                                    </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="product-layout d-flex">
-                                                        <div class="image col-xs-4">
-                                                            <img src="./img/products/product2.jpg" alt="">
-                                                        </div>
-                                                        <div class="col-xs-8">
-                                                            <div class="caption text-left">
-                                                                <h5><a href="#">Cookies</a></h4>
-                                                                    <p class="price"><strong>$65.00<strike
-                                                                                style="color: #999; margin-left: 10px;">$125.00</strike></strong>
-                                                                    </p>
-                                                                    <div class="rating">
-                                                                        <span style="color: gold;">
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fas fa-star-half-alt"></i>
-                                                                        </span>
-                                                                    </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="content d-flex">
-                                            <div class="col p-0">
-                                                <div class="row">
-                                                    <div class="product-layout d-flex">
-                                                        <div class="image col-xs-4">
-                                                            <img src="./img/products/product1.jpg" alt="">
-                                                        </div>
-                                                        <div class="col-xs-8">
-                                                            <div class="caption text-left">
-                                                                <h5><a href="#">Vegatable</a></h4>
-                                                                    <p class="price"><strong>$65.00<strike
-                                                                                style="color: #999; margin-left: 10px;">$125.00</strike></strong>
-                                                                    </p>
-                                                                    <div class="rating">
-                                                                        <span style="color: gold;">
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fas fa-star-half-alt"></i>
-                                                                        </span>
-                                                                    </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="product-layout d-flex">
-                                                        <div class="image col-xs-4">
-                                                            <img src="./img/products/product2.jpg" alt="">
-                                                        </div>
-                                                        <div class="col-xs-8">
-                                                            <div class="caption text-left">
-                                                                <h5><a href="#">Cookies</a></h4>
-                                                                    <p class="price"><strong>$65.00<strike
-                                                                                style="color: #999; margin-left: 10px;">$125.00</strike></strong>
-                                                                    </p>
-                                                                    <div class="rating">
-                                                                        <span style="color: gold;">
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fas fa-star-half-alt"></i>
-                                                                        </span>
-                                                                    </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="content d-flex">
-                                            <div class="col p-0">
-                                                <div class="row">
-                                                    <div class="product-layout d-flex">
-                                                        <div class="image col-xs-4">
-                                                            <img src="./img/products/product1.jpg" alt="">
-                                                        </div>
-                                                        <div class="col-xs-8">
-                                                            <div class="caption text-left">
-                                                                <h5><a href="#">Vegatable</a></h4>
-                                                                    <p class="price"><strong>$65.00<strike
-                                                                                style="color: #999; margin-left: 10px;">$125.00</strike></strong>
-                                                                    </p>
-                                                                    <div class="rating">
-                                                                        <span style="color: gold;">
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fa fa-star"
-                                                                                aria-hidden="true"></i>
-                                                                            <i class="fas fa-star-half-alt"></i>
-                                                                        </span>
-                                                                    </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="product-layout d-flex">
-                                                        <div class="image col-xs-4">
-                                                            <img src="./img/products/product2.jpg" alt="">
                                                         </div>
                                                         <div class="col-xs-8">
                                                             <div class="caption text-left">
@@ -1811,9 +1754,9 @@
                             <div class="header d-flex w-100">
                                 <h2>LASTED BLOG</h2>
                                 <div class="owl-button d-inline-flex">
-                                    <div class="owl-prev"><a href=""><i class="fa fa-angle-left"
+                                    <div class="owl-prev blog-prev"><a href="#"><i class="fa fa-angle-left"
                                                 aria-hidden="true"></i></a></div>
-                                    <div class="owl-next"><a href=""><i class="fa fa-angle-right"
+                                    <div class="owl-next blog-next"><a href="#"><i class="fa fa-angle-right"
                                                 aria-hidden="true"></i></a></div>
                                 </div>
                             </div>
@@ -1846,7 +1789,7 @@
                                     <div class="swiper-slide">
                                         <div class="card-deck content ">
                                             <div class="card border-0">
-                                                <img class="card-img-top" src="img/blog/blog1.jpg" alt="Card image cap">
+                                                <img class="card-img-top" src="img/blog/blog2.jpg" alt="Card image cap">
                                                 <div class="card-body">
                                                     <h4 class="card-title blog-title">Praesent porta tincidunt bibendum
                                                     </h4>
@@ -1870,7 +1813,7 @@
                                     <div class="swiper-slide">
                                         <div class="card-deck content ">
                                             <div class="card border-0">
-                                                <img class="card-img-top" src="img/blog/blog1.jpg" alt="Card image cap">
+                                                <img class="card-img-top" src="img/blog/blog3.jpg" alt="Card image cap">
                                                 <div class="card-body">
                                                     <h4 class="card-title blog-title">Praesent porta tincidunt bibendum
                                                     </h4>
@@ -1894,7 +1837,7 @@
                                     <div class="swiper-slide">
                                         <div class="card-deck content ">
                                             <div class="card border-0">
-                                                <img class="card-img-top" src="img/blog/blog1.jpg" alt="Card image cap">
+                                                <img class="card-img-top" src="img/blog/blog4.jpg" alt="Card image cap">
                                                 <div class="card-body">
                                                     <h4 class="card-title blog-title">Praesent porta tincidunt bibendum
                                                     </h4>
@@ -1985,7 +1928,157 @@
                                     <div class="swiper-slide">
                                         <div class="card-deck content ">
                                             <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
+                                                <a href=""><img class="card-img-top" src="img/products/product5.jpg"
+                                                        alt="Card image cap"></a>
+                                                <!-- image hover -->
+                                                <a href=""><img class="card-img-top hover-img"
+                                                        src="img/products/product6.jpg" alt="Card image cap"></a>
+                                                <div class="button-group text-center">
+                                                    <button type="button" data-toggle="tooltip" title="" class="pwish"
+                                                        data-original-title="Add to Wish List"><img
+                                                            src="./img/svg/heart.svg" width="18px" height="18px"
+                                                            alt="wish"></button>
+                                                    <button type="button" data-toggle="tooltip" title="" class="pcom"
+                                                        data-original-title="Compare"><img src="./img/chart.png"
+                                                            width="18px" height="18px" alt=""></button>
+                                                </div>
+                                                <!--end img hover  -->
+                                                <!--discount lable-->
+                                                <div class="lbl-discount">
+                                                    <span>Save 21%</span>
+                                                </div>
+                                                <!-- end discount lable -->
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><a href="#">Vegie Delight</a></h5>
+                                                    <p class="card-text m-0"><strong>$65.00</strong></p>
+                                                    <div class="ratting">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="input-group mt-md-4">
+                                                        <label for="" class="lable-qty mr-md-2 mb-0">Qty</label>
+                                                        <input class=" input-qty" type="number" name="qty" value="1"
+                                                            min="1" step="1">
+                                                        <button class="btn-addcart  " type="button">
+                                                            <img class="border-0" src="./img/svg/shopping-cart.svg"
+                                                                width="20px" height="20px" alt="button addtocart ">
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card-deck content ">
+                                            <div class="card border-0">
+                                                <a href=""><img class="card-img-top" src="img/products/product1.jpg"
+                                                        alt="Card image cap"></a>
+                                                <!-- image hover -->
+                                                <a href=""><img class="card-img-top hover-img"
+                                                        src="img/products/product4.jpg" alt="Card image cap"></a>
+                                                <div class="button-group text-center">
+                                                    <button type="button" data-toggle="tooltip" title="" class="pwish"
+                                                        data-original-title="Add to Wish List"><img
+                                                            src="./img/svg/heart.svg" width="18px" height="18px"
+                                                            alt="wish"></button>
+                                                    <button type="button" data-toggle="tooltip" title="" class="pcom"
+                                                        data-original-title="Compare"><img src="./img/chart.png"
+                                                            width="18px" height="18px" alt=""></button>
+                                                </div>
+                                                <!--end img hover  -->
+                                                <!--discount lable-->
+                                                <div class="lbl-discount">
+                                                    <span>Save 21%</span>
+                                                </div>
+                                                <!-- end discount lable -->
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><a href="#">Vegie Delight</a></h5>
+                                                    <p class="card-text m-0"><strong>$65.00</strong></p>
+                                                    <div class="ratting">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="input-group mt-md-4">
+                                                        <label for="" class="lable-qty mr-md-2 mb-0">Qty</label>
+                                                        <input class=" input-qty" type="number" name="qty" value="1"
+                                                            min="1" step="1">
+                                                        <button class="btn-addcart  " type="button">
+                                                            <img class="border-0" src="./img/svg/shopping-cart.svg"
+                                                                width="20px" height="20px" alt="button addtocart ">
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card-deck content ">
+                                            <div class="card border-0">
+                                                <a href=""><img class="card-img-top" src="img/products/product5.jpg"
+                                                        alt="Card image cap"></a>
+                                                <!-- image hover -->
+                                                <a href=""><img class="card-img-top hover-img"
+                                                        src="img/products/product3.jpg" alt="Card image cap"></a>
+                                                <div class="button-group text-center">
+                                                    <button type="button" data-toggle="tooltip" title="" class="pwish"
+                                                        data-original-title="Add to Wish List"><img
+                                                            src="./img/svg/heart.svg" width="18px" height="18px"
+                                                            alt="wish"></button>
+                                                    <button type="button" data-toggle="tooltip" title="" class="pcom"
+                                                        data-original-title="Compare"><img src="./img/chart.png"
+                                                            width="18px" height="18px" alt=""></button>
+                                                </div>
+                                                <!--end img hover  -->
+                                                <!--discount lable-->
+                                                <div class="lbl-discount">
+                                                    <span>Save 21%</span>
+                                                </div>
+                                                <!-- end discount lable -->
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><a href="#">Vegie Delight</a></h5>
+                                                    <p class="card-text m-0"><strong>$65.00</strong></p>
+                                                    <div class="ratting">
+                                                        <span style="color: gold;">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="input-group mt-md-4">
+                                                        <label for="" class="lable-qty mr-md-2 mb-0">Qty</label>
+                                                        <input class=" input-qty" type="number" name="qty" value="1"
+                                                            min="1" step="1">
+                                                        <button class="btn-addcart  " type="button">
+                                                            <img class="border-0" src="./img/svg/shopping-cart.svg"
+                                                                width="20px" height="20px" alt="button addtocart ">
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="card-deck content ">
+                                            <div class="card border-0">
+                                                <a href=""><img class="card-img-top" src="img/products/product6.jpg"
                                                         alt="Card image cap"></a>
                                                 <!-- image hover -->
                                                 <a href=""><img class="card-img-top hover-img"
@@ -2039,157 +2132,7 @@
                                                         alt="Card image cap"></a>
                                                 <!-- image hover -->
                                                 <a href=""><img class="card-img-top hover-img"
-                                                        src="img/products/product2.jpg" alt="Card image cap"></a>
-                                                <div class="button-group text-center">
-                                                    <button type="button" data-toggle="tooltip" title="" class="pwish"
-                                                        data-original-title="Add to Wish List"><img
-                                                            src="./img/svg/heart.svg" width="18px" height="18px"
-                                                            alt="wish"></button>
-                                                    <button type="button" data-toggle="tooltip" title="" class="pcom"
-                                                        data-original-title="Compare"><img src="./img/chart.png"
-                                                            width="18px" height="18px" alt=""></button>
-                                                </div>
-                                                <!--end img hover  -->
-                                                <!--discount lable-->
-                                                <div class="lbl-discount">
-                                                    <span>Save 21%</span>
-                                                </div>
-                                                <!-- end discount lable -->
-                                                <div class="card-body">
-                                                    <h5 class="card-title"><a href="#">Vegie Delight</a></h5>
-                                                    <p class="card-text m-0"><strong>$65.00</strong></p>
-                                                    <div class="ratting">
-                                                        <span style="color: gold;">
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star-half-alt"></i>
-                                                        </span>
-                                                    </div>
-                                                    <div class="input-group mt-md-4">
-                                                        <label for="" class="lable-qty mr-md-2 mb-0">Qty</label>
-                                                        <input class=" input-qty" type="number" name="qty" value="1"
-                                                            min="1" step="1">
-                                                        <button class="btn-addcart  " type="button">
-                                                            <img class="border-0" src="./img/svg/shopping-cart.svg"
-                                                                width="20px" height="20px" alt="button addtocart ">
-                                                        </button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-deck content ">
-                                            <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
-                                                        alt="Card image cap"></a>
-                                                <!-- image hover -->
-                                                <a href=""><img class="card-img-top hover-img"
-                                                        src="img/products/product2.jpg" alt="Card image cap"></a>
-                                                <div class="button-group text-center">
-                                                    <button type="button" data-toggle="tooltip" title="" class="pwish"
-                                                        data-original-title="Add to Wish List"><img
-                                                            src="./img/svg/heart.svg" width="18px" height="18px"
-                                                            alt="wish"></button>
-                                                    <button type="button" data-toggle="tooltip" title="" class="pcom"
-                                                        data-original-title="Compare"><img src="./img/chart.png"
-                                                            width="18px" height="18px" alt=""></button>
-                                                </div>
-                                                <!--end img hover  -->
-                                                <!--discount lable-->
-                                                <div class="lbl-discount">
-                                                    <span>Save 21%</span>
-                                                </div>
-                                                <!-- end discount lable -->
-                                                <div class="card-body">
-                                                    <h5 class="card-title"><a href="#">Vegie Delight</a></h5>
-                                                    <p class="card-text m-0"><strong>$65.00</strong></p>
-                                                    <div class="ratting">
-                                                        <span style="color: gold;">
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star-half-alt"></i>
-                                                        </span>
-                                                    </div>
-                                                    <div class="input-group mt-md-4">
-                                                        <label for="" class="lable-qty mr-md-2 mb-0">Qty</label>
-                                                        <input class=" input-qty" type="number" name="qty" value="1"
-                                                            min="1" step="1">
-                                                        <button class="btn-addcart  " type="button">
-                                                            <img class="border-0" src="./img/svg/shopping-cart.svg"
-                                                                width="20px" height="20px" alt="button addtocart ">
-                                                        </button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-deck content ">
-                                            <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
-                                                        alt="Card image cap"></a>
-                                                <!-- image hover -->
-                                                <a href=""><img class="card-img-top hover-img"
-                                                        src="img/products/product2.jpg" alt="Card image cap"></a>
-                                                <div class="button-group text-center">
-                                                    <button type="button" data-toggle="tooltip" title="" class="pwish"
-                                                        data-original-title="Add to Wish List"><img
-                                                            src="./img/svg/heart.svg" width="18px" height="18px"
-                                                            alt="wish"></button>
-                                                    <button type="button" data-toggle="tooltip" title="" class="pcom"
-                                                        data-original-title="Compare"><img src="./img/chart.png"
-                                                            width="18px" height="18px" alt=""></button>
-                                                </div>
-                                                <!--end img hover  -->
-                                                <!--discount lable-->
-                                                <div class="lbl-discount">
-                                                    <span>Save 21%</span>
-                                                </div>
-                                                <!-- end discount lable -->
-                                                <div class="card-body">
-                                                    <h5 class="card-title"><a href="#">Vegie Delight</a></h5>
-                                                    <p class="card-text m-0"><strong>$65.00</strong></p>
-                                                    <div class="ratting">
-                                                        <span style="color: gold;">
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                                            <i class="fas fa-star-half-alt"></i>
-                                                        </span>
-                                                    </div>
-                                                    <div class="input-group mt-md-4">
-                                                        <label for="" class="lable-qty mr-md-2 mb-0">Qty</label>
-                                                        <input class=" input-qty" type="number" name="qty" value="1"
-                                                            min="1" step="1">
-                                                        <button class="btn-addcart  " type="button">
-                                                            <img class="border-0" src="./img/svg/shopping-cart.svg"
-                                                                width="20px" height="20px" alt="button addtocart ">
-                                                        </button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card-deck content ">
-                                            <div class="card border-0">
-                                                <a href=""><img class="card-img-top" src="img/products/product3.jpg"
-                                                        alt="Card image cap"></a>
-                                                <!-- image hover -->
-                                                <a href=""><img class="card-img-top hover-img"
-                                                        src="img/products/product2.jpg" alt="Card image cap"></a>
+                                                        src="img/products/product6.jpg" alt="Card image cap"></a>
                                                 <div class="button-group text-center">
                                                     <button type="button" data-toggle="tooltip" title="" class="pwish"
                                                         data-original-title="Add to Wish List"><img
