@@ -50,7 +50,7 @@ nav{
         border-left: 1px solid #e5e5e5;
     }
 
-    .toogle-category{
+    .toggle-category{
         display: none;
     }
     .socials-block{
@@ -787,14 +787,13 @@ footer{
 
 // Extra small devices (portrait phones, less than 576px)
 @media (min-width: 425px) and (max-width: 575.98px) {
-    nav{
-        
+    nav{ 
         .header-social{          
             .socials-block{
-                .toogle-category{
+                .toggle-category{
                     display: block;
-                    position: absolute;
-                    top: 10px;
+                    position: relative;
+                    top: 32px;
                     font-size: 17px;
                 }
                 ul{
@@ -856,17 +855,94 @@ footer{
     .allmenu{
         display: none;
     }
+    .navbar-responsive{
+        // display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        width: 250px;
+        height: 100%;
+        z-index: 9999999999999999;
+        .nav-header{
+            background-color: #161616;
+            padding: 12px 15px;
+            width: 100%;
+            display: inline-block;
+            color: #fff;
+            letter-spacing: 1px;
+            position: relative;
+            span{
+                i{
+                    position: absolute;
+                    right: 20px;              
+                }
+            }
+        }
+        .nav-menu{
+            ul{
+                margin-left: -30px;
+                li{
+                    color: #272727;
+                    cursor: pointer;
+                    padding: 15px 15px;
+                    min-height: 15px;
+                    letter-spacing: 0.4px;
+                    background-color: transparent;
+                    border-bottom: 1px solid #eaeaea;
+                }
+            }
+        }
+    }
+  
     main{
         .left-side{
             display: none;      
         }
         .right-side{
-           &__category-tab{
-               .content{
-                display: inline-block;
-                word-break: break-word;
-               }
-           }
+            &__category-tab{
+                .content{
+                    display: inline-block;
+                    word-break: break-word;
+                }
+            }
+            &__category-tab ,&__featured-tab ,&__specials-tab,&__latest-tab,&__blog {
+                .content {
+                    .card:last-child {
+                        margin-right: 0;
+                    }
+                    .card:first-child {
+                        margin-left: 0;
+                    }
+                    .card{
+                        .input-group{                         
+                            .input-qty{
+                                margin-right: 5px;
+                            }
+                            .btn-addcart{
+                                padding: 0px 15px;                
+                            }          
+                        }
+                    }
+                }
+               
+            }
+            
+        }
+    }
+    footer{
+        .footer{
+            .aboutf{
+                h5{
+                    i{
+                        display: block;
+                        float: right;
+                    }
+                }
+                .listf{
+                    display: none;
+                }
+            }
         }
     }
 }
@@ -876,7 +952,7 @@ footer{
         
         .header-social{          
             .socials-block{
-                .toogle-category{
+                .toggle-category{
                     display: block;
                     position: absolute;
                     top: 10px;
@@ -1140,6 +1216,12 @@ footer{
                 }
             }
         }
+        .form-search
+        {
+            button{
+                right: 15px !important;
+            }
+        }
     }
     main{
         .left-side{
@@ -1197,13 +1279,8 @@ footer{
                    
                     .owl-prev , .owl-next{
                         height: 30px;
-                        a{
-                            
-                        }
                     }
-                    :hover{
-                       
-                    }
+                    
                    
                 }
             }
@@ -1262,8 +1339,7 @@ footer{
         
         
     }
-  }
-
+}
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { }
 

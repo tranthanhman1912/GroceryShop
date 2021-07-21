@@ -226,9 +226,9 @@ $('.carousel').carousel({
 
 
 // responsive 576px nav
-$( ".toogle-category" ).click(function() {
-  $( ".navbar-responsive" ).show( "slow");
+$( ".toggle-category" ).click(function() {
+  $( ".navbar-responsive" ).show("slow");
 });
 $( "#close" ).click(function() {
-  $( ".navbar-responsive" ).hide( "slow");
+  $( ".navbar-responsive" ).hide("slow");
 });
